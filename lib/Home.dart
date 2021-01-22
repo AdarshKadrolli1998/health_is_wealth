@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_is_wealth/about_us.dart';
 import 'package:health_is_wealth/doctor.dart';
 import 'calculate_BMI.dart';
 import 'login.dart';
@@ -253,6 +254,19 @@ class Home_State extends State<Home_Session>{
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Login_Session(),),
+                  );
+                },
+              ),
+              ListTile(
+                leading: Container(
+                  child: Image.asset("assets/images/information.png"),
+                  height: 35,
+                ),
+                title: Text("About Us"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => About_Session(),),
                   );
                 },
               ),

@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'doctor_details.dart';
+
+// ignore: camel_case_types
 class Find_Doctor_Session extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -10,6 +13,7 @@ class Find_Doctor_Session extends StatefulWidget{
 
 }
 
+// ignore: camel_case_types
 class Find_Doctor_State extends State<Find_Doctor_Session>{
   @override
   Widget build(BuildContext context) {
@@ -200,6 +204,7 @@ class Find_Doctor_State extends State<Find_Doctor_Session>{
                         // ),
                         ],
                     ),
+                  // padding: const EdgeInsets.only(top: 20),
                   margin: const EdgeInsets.only(top: 25),
                   height: 100,
                 ),
@@ -216,62 +221,90 @@ class Find_Doctor_State extends State<Find_Doctor_Session>{
                 Container(
                   child: ListView(
                     children: <Widget> [
-                      Container(
-                        height: 75,
-                        child: ListTile(
-                          leading: Container(
-                              child: Image.network("https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg",
-                                height: 40,width: 40,),
-                          ),
-                          title: Text("Dr. Stella Kane",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
-                          subtitle: Text("Heart Surgeon - Flower Hospitals",style: TextStyle(color: Colors.deepPurple),),
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.blue[100],
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        padding: const EdgeInsets.all(6),
-                        margin: const EdgeInsets.only(bottom: 5),
-                      ),
-                      Container(
-                        height: 75,
-                        child: ListTile(
-                          leading: Container(
-                                child: Image.network("https://thumbs.dreamstime.com/b/young-asian-doctor-smiling-handsome-man-wearing-lab-coat-stands-crossed-arms-vector-illustration-157083091.jpg",
-                                  height: 40,width: 40,),
-                          ),
-                          title: Text("Dr. Joseph Cart",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
-                          subtitle: Text("Dental Surgeon - Flower Hospitals",style: TextStyle(color: Colors.deepPurple),),
-                        ),
-                        decoration: BoxDecoration(
-                            color: Colors.yellow[200],
-                            borderRadius: BorderRadius.circular(20)
-                        ),
-                        padding: const EdgeInsets.all(6),
-                        margin: const EdgeInsets.only(bottom: 5),
-                      ),
-                      Container(
-                        height: 75,
-                        child: ListTile(
-                          leading: Container(
+                     FlatButton(
+                       onPressed: (){
+                         Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Doctor_Details_Session(),),
+                          );
+                        },
+                         child:  Container(
+                           height: 75,
+                           child: ListTile(
+                             leading: Container(
+                               child: Image.network("https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg",
+                                 height: 40,width: 40,),
+                             ),
+                             title: Text("Dr. Stella Kane",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
+                             subtitle: Text("Heart Surgeon - Flower Hospitals",style: TextStyle(color: Colors.deepPurple),),
+                           ),
+                           decoration: BoxDecoration(
+                               color: Colors.blue[100],
+                               borderRadius: BorderRadius.circular(20)
+                           ),
+                           padding: const EdgeInsets.all(6),
+                           margin: const EdgeInsets.only(bottom: 5),
+                         ),
+                       padding: const EdgeInsets.all(0),
+                     ),
+                     FlatButton(
+                         onPressed: (){
+                           Navigator.push(
+                             context,
+                             MaterialPageRoute(builder: (context) => Doctor_Details_Session(),),
+                           );
+                         },
+                         child:  Container(
+                           height: 75,
+                           child: ListTile(
+                             leading: Container(
+                               child: Image.network("https://thumbs.dreamstime.com/b/young-asian-doctor-smiling-handsome-man-wearing-lab-coat-stands-crossed-arms-vector-illustration-157083091.jpg",
+                                 height: 40,width: 40,),
+                             ),
+                             title: Text("Dr. Joseph Cart",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
+                             subtitle: Text("Dental Surgeon - Flower Hospitals",style: TextStyle(color: Colors.deepPurple),),
+                           ),
+                           decoration: BoxDecoration(
+                               color: Colors.yellow[200],
+                               borderRadius: BorderRadius.circular(20)
+                           ),
+                           padding: const EdgeInsets.all(6),
+                           margin: const EdgeInsets.only(bottom: 5),
+                         ),
+                       padding: const EdgeInsets.all(0),
+                     ),
+                      FlatButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Doctor_Details_Session(),),
+                            );
+                          },
+                          child: Container(
+                            height: 75,
+                            child: ListTile(
+                              leading: Container(
                                 child: Image.network("https://image.freepik.com/free-vector/doctor-pointing-clipboard_23-2147795772.jpg",
                                   height: 40,width: 40,),
+                              ),
+                              title: Text("Dr. Adarsh",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
+                              subtitle: Text("Eye Specialist - Skycliff_It Hospitals",style: TextStyle(color: Colors.deepPurple),),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.orange[200],
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            padding: const EdgeInsets.all(6),
+                            margin: const EdgeInsets.only(bottom: 5),
                           ),
-                          title: Text("Dr. Adarsh",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
-                          subtitle: Text("Eye Specialist - Skycliff_It Hospitals",style: TextStyle(color: Colors.deepPurple),),
-                        ),
-                        decoration: BoxDecoration(
-                            color: Colors.orange[200],
-                            borderRadius: BorderRadius.circular(20)
-                        ),
-                        padding: const EdgeInsets.all(6),
-                        margin: const EdgeInsets.only(bottom: 5),
+                        padding: const EdgeInsets.all(0),
                       ),
                     ],
                   ),
                   margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
                   height: 143,
                 ),
+
 
               ],
             ),

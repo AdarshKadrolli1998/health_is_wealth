@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:health_is_wealth/register.dart';
-
 import 'Home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: camel_case_types
 class Login_Session extends StatefulWidget{
@@ -16,70 +15,98 @@ class Login_Session extends StatefulWidget{
 
 // ignore: camel_case_types
 class Login_State extends State<Login_Session>{
+  SharedPreferences pref;
+  bool newuser;
   final email = TextEditingController();
   final pass = TextEditingController();
   bool _isHidden = true;
+  var myEmail;
+  var myPass;
   void _togglePasswordView() {
     setState(() {
       _isHidden = !_isHidden;
     });
   }
-  // ignore: non_constant_identifier_names
-  void Login(){
-    setState(() {
-      var myEmail = email.text;
-      var myPass = pass.text;
-      if(myEmail == "adarsh@gmail.com" && myPass == "1234") {
-        return showDialog(
-                context: context,
-                builder: (ctx) => AlertDialog(
-                  title: Text("Message"),
-                  content: Text("You Have Successfully Logged in"),
-                  actions: <Widget>[
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Home_Session(),),
-                        );
-                      },
-                      child: Text("OK"),
-                    ),
-                  ],
-                ),
-              );
-      }
-      else {
-        return showDialog(
-                context: context,
-                builder: (ctx) => AlertDialog(
-                  title: Text("Message"),
-                  content: Text("Please register"),
-                  actions: <Widget>[
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Register_Session(),),
-                        );
-                      },
-                      child: Text("OK"),
-                    ),
-                  ],
-                ),
-              );
-      }
-    });
+  @override
+  void initState(){
+    // TODO: implement initState
+    super.initState();
+    loadingData();
   }
+ void loadingData () async
+  {
+    pref = await SharedPreferences.getInstance();
+    newuser = (pref.getBool('login') ?? true);
+    print(newuser);
+    if(newuser == false){
+      Navigator.pushReplacement(
+          context, new MaterialPageRoute(builder: (context) => Home_Session()));
+    }
+    else{
+      Navigator.pushReplacement(
+          context, new MaterialPageRoute(builder: (context) => Login_Session()));
+    }
+  }
+  @override
+  void dispose(){
+    // Clean up the controller when the widget is disposed.
+    email.dispose();
+    pass.dispose();
+    super.dispose();
+  }
+  // ignore: non_constant_identifier_names
+  // void Login(){
+  //   setState(() {
+  //     myEmail = email.text;
+  //     myPass = pass.text;
+  //     if(myEmail == "adarsh@gmail.com" && myPass == "1234") {
+  //       return showDialog(
+  //               context: context,
+  //               builder: (ctx) => AlertDialog(
+  //                 title: Text("Message"),
+  //                 content: Text("You Have Successfully Logged in"),
+  //                 actions: <Widget>[
+  //                   FlatButton(
+  //                     onPressed: () {
+  //                       Navigator.push(
+  //                         context,
+  //                         MaterialPageRoute(builder: (context) => Home_Session(),),
+  //                       );
+  //                     },
+  //                     child: Text("OK"),
+  //                   ),
+  //                 ],
+  //               ),
+  //             );
+  //     }
+  //     else {
+  //       return showDialog(
+  //               context: context,
+  //               builder: (ctx) => AlertDialog(
+  //                 title: Text("Message"),
+  //                 content: Text("Please register"),
+  //                 actions: <Widget>[
+  //                   FlatButton(
+  //                     onPressed: () {
+  //                       Navigator.push(
+  //                         context,
+  //                         MaterialPageRoute(builder: (context) => Register_Session(),),
+  //                       );
+  //                     },
+  //                     child: Text("OK"),
+  //                   ),
+  //                 ],
+  //               ),
+  //             );
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return SafeArea(child: Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Login"),
-      //   backgroundColor: Colors.purple[900],
-      // ),
+    return SafeArea(
+      child: Scaffold(
       body: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -160,9 +187,13 @@ class Login_State extends State<Login_Session>{
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: Text("Forgot Password?"),
-                            padding: const EdgeInsets.only(left: 195.0, top: 0.0, right: 10, bottom: 5),
+                          Column(
+                            children: [
+                              Container(
+                                child: Text("Forgot Password?"),
+                                padding: const EdgeInsets.only(left: 195.0, top: 0.0, right: 10, bottom: 5),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -173,7 +204,17 @@ class Login_State extends State<Login_Session>{
                       Container(
                         child: RaisedButton(
                           child: Text("LOGIN",style: TextStyle(color: Colors.white),),
-                          onPressed: Login,
+                          onPressed: (){
+                            String username = email.text;
+                            String password = pass.text;
+                            if (username != '' && password != '') {
+                              print('Successfull');
+                              pref.setBool('login', false);
+                              pref.setString('username', username);
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => Home_Session()));
+                            }
+                          },
                           color: Colors.purple[900],
                         ),
                         margin: const EdgeInsets.only(left: 115.0, top: 5.0, right: 25.0, bottom: 5.0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:health_is_wealth/find_doctor.dart';
 // ignore: camel_case_types
 class Doctor_Session extends StatefulWidget{
   @override
@@ -45,7 +46,8 @@ class Doctor_State extends State<Doctor_Session>{
                 Container(
                   child: Row(
                     children: [
-                      Expanded(child:  Text("Lorem ipsum dolor amet, consectetur adipiscing inet deli",
+                      Expanded(
+                        child:  Text("Lorem ipsum dolor amet, consectetur adipiscing inet deli",
                         style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 15),
                       ),
                       ),
@@ -57,7 +59,12 @@ class Doctor_State extends State<Doctor_Session>{
                   child: Row(
                     children: [
                       FlatButton(
-                        onPressed: null,
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Find_Doctor_Session(),),
+                          );
+                        },
                         child: Container(
                           child: Text("Get Started",style: TextStyle(color: Colors.white),),
                         ),
@@ -71,7 +78,8 @@ class Doctor_State extends State<Doctor_Session>{
                     borderRadius: BorderRadius.circular(50)
                   ),
                   margin: const EdgeInsets.only(top: 70, left: 0, right: 5),
-                )
+                ),
+                
               ],
             ),
           ),
