@@ -3,6 +3,7 @@ import 'package:health_is_wealth/about_us.dart';
 import 'package:health_is_wealth/doctor.dart';
 import 'calculate_BMI.dart';
 import 'login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: camel_case_types
 class Home_Session extends StatefulWidget{
@@ -195,8 +196,6 @@ class Home_State extends State<Home_Session>{
               ),
               padding: const EdgeInsets.only(top: 35, left: 22, right: 22),
             ),
-
-
           ],
         ),
       ),
@@ -218,7 +217,7 @@ class Home_State extends State<Home_Session>{
               ListTile(
                 leading: Container(
                   child: Image.asset("assets/images/bmi1.png"),
-                  height: 35,
+                  height: 25,
                 ),
                 title: Text("Calculate BMI"),
                 onTap: (){
@@ -231,7 +230,7 @@ class Home_State extends State<Home_Session>{
               ListTile(
                 leading: Container(
                   child: Image.asset("assets/images/calories-calculator.png"),
-                  height: 35,
+                  height: 25,
                 ),
                 title: Text("Calculate Calories"),
                 onTap: (){},
@@ -239,28 +238,15 @@ class Home_State extends State<Home_Session>{
               ListTile(
                 leading: Container(
                   child: Image.asset("assets/images/appointment.png"),
-                  height: 35,
+                  height: 25,
                 ),
                 title: Text("Book Session"),
                 onTap: (){},
               ),
               ListTile(
                 leading: Container(
-                  child: Image.asset("assets/images/logout.png"),
-                  height: 35,
-                ),
-                title: Text("Log out"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Login_Session(),),
-                  );
-                },
-              ),
-              ListTile(
-                leading: Container(
                   child: Image.asset("assets/images/information.png"),
-                  height: 35,
+                  height: 25,
                 ),
                 title: Text("About Us"),
                 onTap: (){
@@ -270,6 +256,21 @@ class Home_State extends State<Home_Session>{
                   );
                 },
               ),
+              ListTile(
+                 leading: Container(
+                   child: Image.asset("assets/images/logout.png"),
+                   height: 25,
+                 ),
+                 title: Text("Log out"),
+                 onTap: () {
+                   // SharedPreferences pref = await SharedPreferences.getInstance();
+                   // pref.remove('username');
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(builder: (context) => Login_Session(),),
+                   );
+                 },
+               ),
             ],
           ),
         ),

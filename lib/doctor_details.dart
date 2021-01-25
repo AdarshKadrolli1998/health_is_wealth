@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class Doctor_Details_Session extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -10,6 +11,7 @@ class Doctor_Details_Session extends StatefulWidget{
 
 }
 
+// ignore: camel_case_types
 class Doctor_Details_State extends State<Doctor_Details_Session>{
   @override
   Widget build(BuildContext context) {

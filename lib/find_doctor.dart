@@ -102,6 +102,7 @@ class Find_Doctor_State extends State<Find_Doctor_Session>{
                                 ],
                               )
                           ),
+                          padding: const EdgeInsets.only(left: 10, top: 15),
                         ),
                         Container(
                           child: Card(
@@ -134,7 +135,7 @@ class Find_Doctor_State extends State<Find_Doctor_Session>{
                                 ],
                               )
                           ),
-                          padding: const EdgeInsets.only(left: 10),
+                          padding: const EdgeInsets.only(left: 10, top: 15),
                         ),
                         Container(
                           child: Card(
@@ -167,46 +168,46 @@ class Find_Doctor_State extends State<Find_Doctor_Session>{
                                 ],
                               )
                           ),
-                          padding: const EdgeInsets.only(left: 10),
+                          padding: const EdgeInsets.only(left: 10, top: 15),
                         ),
-                        // Container(
-                        //   child: Card(
-                        //       elevation: 3,
-                        //       color: Colors.white,
-                        //       child: Column(
-                        //         children: [
-                        //           FractionalTranslation(
-                        //             translation: Offset(0.5, -0.3),
-                        //             child: Align(
-                        //               child: Container(
-                        //                 height: 50,
-                        //                 width: 50,
-                        //                 child: Image.asset("assets/images/tooth1.png"),
-                        //                 decoration: BoxDecoration(
-                        //                     color: Colors.blue,
-                        //                     borderRadius: BorderRadius.circular(10)
-                        //                 ),
-                        //                 padding: const EdgeInsets.only(left: 0),
-                        //               ),
-                        //
-                        //             ),
-                        //           ),
-                        //
-                        //           Container(
-                        //             child: Text("Dental \nSurgeon",style: TextStyle(color: Colors.purple),),
-                        //             padding: const EdgeInsets.only(top: 0, right: 20, left: 10),
-                        //             margin: const EdgeInsets.only(top: 0, right: 0, left: 0),
-                        //           ),
-                        //         ],
-                        //       )
-                        //   ),
-                        //   padding: const EdgeInsets.only(left: 10),
-                        // ),
+                        Container(
+                          child: Card(
+                              elevation: 3,
+                              color: Colors.white,
+                              child: Column(
+                                children: [
+                                  FractionalTranslation(
+                                    translation: Offset(0.5, -0.3),
+                                    child: Align(
+                                      child: Container(
+                                        height: 50,
+                                        width: 50,
+                                        child: Image.asset("assets/images/tooth1.png"),
+                                        decoration: BoxDecoration(
+                                            color: Colors.blue,
+                                            borderRadius: BorderRadius.circular(10)
+                                        ),
+                                        padding: const EdgeInsets.only(left: 0),
+                                      ),
+
+                                    ),
+                                  ),
+
+                                  Container(
+                                    child: Text("Dental \nSurgeon",style: TextStyle(color: Colors.purple),),
+                                    padding: const EdgeInsets.only(top: 0, right: 20, left: 10),
+                                    margin: const EdgeInsets.only(top: 0, right: 0, left: 0),
+                                  ),
+                                ],
+                              )
+                          ),
+                          padding: const EdgeInsets.only(left: 10, top: 15, right: 15),
+                        ),
                         ],
                     ),
                   // padding: const EdgeInsets.only(top: 20),
-                  margin: const EdgeInsets.only(top: 25),
-                  height: 100,
+                  // margin: const EdgeInsets.only(top: 25),
+                  height: 105,
                 ),
                 Container(
                   child: Row(
@@ -302,7 +303,7 @@ class Find_Doctor_State extends State<Find_Doctor_Session>{
                     ],
                   ),
                   margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
-                  height: 143,
+                  height: 163,
                 ),
 
 

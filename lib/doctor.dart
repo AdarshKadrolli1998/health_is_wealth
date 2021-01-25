@@ -25,14 +25,14 @@ class Doctor_State extends State<Doctor_Session>{
                   clipper: WaveClipperOne(flip: true),
                   child: Container(
                     height: 135,
-                    color: Colors.purpleAccent,
+                    color: Colors.deepPurple[500],
                     child: Center(
                       child: Container(
                         child: Row(
                           children: [
                             Expanded(
                               child: Text("Choose The Doctor You Want",
-                                style: TextStyle(color: Colors.deepPurple, fontSize: 25, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ],
