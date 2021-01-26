@@ -22,6 +22,7 @@ class Login_State extends State<Login_Session>{
   bool _isHidden = true;
   var myEmail;
   var myPass;
+
   void _togglePasswordView() {
     setState(() {
       _isHidden = !_isHidden;
@@ -30,6 +31,7 @@ class Login_State extends State<Login_Session>{
   @override
   void initState(){
     // TODO: implement initState
+    print('initState()');
     super.initState();
     loadingData();
   }
@@ -38,13 +40,13 @@ class Login_State extends State<Login_Session>{
     pref = await SharedPreferences.getInstance();
     newuser = (pref.getBool('login') ?? true);
     print(newuser);
-    if(newuser == false){
-      Navigator.pushReplacement(
+    if(newuser == true){
+      Navigator.push(
           context, new MaterialPageRoute(builder: (context) => Home_Session()));
     }
     else{
-      Navigator.pushReplacement(
-          context, new MaterialPageRoute(builder: (context) => Login_Session()));
+      // Navigator.pushReplacement(
+      //     context, new MaterialPageRoute(builder: (context) => Login_Session()));
     }
   }
   @override
@@ -52,6 +54,7 @@ class Login_State extends State<Login_Session>{
     // Clean up the controller when the widget is disposed.
     email.dispose();
     pass.dispose();
+    print('dispose()');
     super.dispose();
   }
   // ignore: non_constant_identifier_names

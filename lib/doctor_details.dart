@@ -29,7 +29,7 @@ class Doctor_Details_State extends State<Doctor_Details_Session>{
                           height: 190,
                         ),
                         FractionalTranslation(
-                          translation: Offset(0.0, -0.07),
+                          translation: Offset(0.0, -0.08),
                           child: Container(
                             child: Card(
                               elevation: 10,
@@ -127,9 +127,9 @@ class Doctor_Details_State extends State<Doctor_Details_Session>{
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          child: Text("Dr. Stella is the top most heart surgeon in Flower Hospite. She has done over 100 successful surgeries within past 3 years. She has achieved several awards for her wonderful contribution in her own field. she's available for private consultation for given schedules.",
-                                            style: TextStyle(color: Colors.deepPurple,fontSize: 14),),
-                                          padding: const EdgeInsets.only(left: 10,top: 5),
+                                          child: Text("Dr. Stella is the top most heart surgeon in Flower Hospital. She has done over 100 successful surgeries within past 3 years. She has achieved several awards for her wonderful contribution in her own field. she's available for private consultation for given schedules.",
+                                            style: TextStyle(color: Colors.deepPurple,fontSize: 14),textAlign: TextAlign.justify,),
+                                          padding: const EdgeInsets.only(left: 10,top: 5,right: 10),
                                         ),
                                       )
                                     ],

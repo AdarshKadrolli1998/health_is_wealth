@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:health_is_wealth/about_us.dart';
 import 'package:health_is_wealth/doctor.dart';
+import 'booksession.dart';
 import 'calculate_BMI.dart';
 import 'login.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: camel_case_types
 class Home_Session extends StatefulWidget{
@@ -227,21 +227,26 @@ class Home_State extends State<Home_Session>{
                 );
                   },
               ),
-              ListTile(
-                leading: Container(
-                  child: Image.asset("assets/images/calories-calculator.png"),
-                  height: 25,
-                ),
-                title: Text("Calculate Calories"),
-                onTap: (){},
-              ),
+              // ListTile(
+              //   leading: Container(
+              //     child: Image.asset("assets/images/calories-calculator.png"),
+              //     height: 25,
+              //   ),
+              //   title: Text("Calculate Calories"),
+              //   onTap: (){},
+              // ),
               ListTile(
                 leading: Container(
                   child: Image.asset("assets/images/appointment.png"),
                   height: 25,
                 ),
                 title: Text("Book Session"),
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Book_Session(),),
+                  );
+                },
               ),
               ListTile(
                 leading: Container(
