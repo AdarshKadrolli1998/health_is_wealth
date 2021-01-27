@@ -348,10 +348,9 @@ class BMI extends State<BMI_Calc>{
                                         Expanded(
                                             child: Text('Your BMI - $BMIResult',)
                                         ),
-
-                                         Expanded(
-                                             child: Text('\nYou are - $result',)
-                                         ),
+                                         // Expanded(
+                                         //     child: Text('\nYou are - $result',)
+                                         // ),
                                 ],
                                   ),
                                   actions: <Widget>[
@@ -359,7 +358,7 @@ class BMI extends State<BMI_Calc>{
                                       onPressed: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => BMI_Calc(),),
+                                          MaterialPageRoute(builder: (context) => Home_Session(),),
                                         );
                                       },
                                       child: Text("OK"),
